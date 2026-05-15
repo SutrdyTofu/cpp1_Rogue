@@ -95,13 +95,10 @@ void GameManager::StageEntrance(State *player, State enemyList[ENEMY_COUNT], int
 			break;
 		case MAP_NAME_OPTIMIZATION:
 			optimizationMap(player);
-			break;
 		case MAP_NAME_LEGACECODE:
 			LegacyCodeMap(player, enemyList);
-			break;
 		case MAP_NAME_MAINERROR:
 			Map_Main_cpp_Error(player);
-			break;
 	default:
 		break;
 	}
@@ -159,7 +156,7 @@ void GameManager::optimizationMap(State* player) {
 	this->drawUI.ClearScreen();
 	drawUI.DrawStatus(player->getName(), "", to_string(player->getHealth()), "");
 
-	string StringSelection = "1. HP 20% È¸    ";
+	string StringSelection = "1. HP 20% È¸º¹  ";
 	string StringResult = "";
 	int playerChoice = -1;
 	int unlockSkillCount = 0;
@@ -199,7 +196,7 @@ void GameManager::optimizationMap(State* player) {
 
 
 	drawUI.DrawTextUI(StringSelection,"");
-	drawUI.DrawInputUI("È¹     È¿          Ï¼    : ");
+	drawUI.DrawInputUI("È¹µæÇÒ È¿°ú¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
 	playerChoice = PlayerInputNumber(unlockSkillCount+1);
 	switch (playerChoice) {
 	case 1:
@@ -207,11 +204,11 @@ void GameManager::optimizationMap(State* player) {
 		break;
 	case 2:
 		player->addSkill(randSkill_1);
-		StringResult = this->skillManager.skillNameList[randSkill_1] + "   Å³   È¹   Ï¿    Ï´ .";
+		StringResult = this->skillManager.skillNameList[randSkill_1] + " ½ºÅ³À» È¹µæÇÏ¿´½À´Ï´Ù.";
 		break;
 	case 3:
 		player->addSkill(randSkill_2);
-		StringResult = this->skillManager.skillNameList[randSkill_2] + "   Å³   È¹   Ï¿    Ï´ .";
+		StringResult = this->skillManager.skillNameList[randSkill_2] + " ½ºÅ³À» È¹µæÇÏ¿´½À´Ï´Ù.";
 		break;
 	default:
 		break;
@@ -233,7 +230,7 @@ void GameManager::LegacyCodeMap(State* player, State enemyList[ENEMY_COUNT]) {
 	int playerChoice, rand;
 
 	drawUI.DrawTextUI("1.Direct_Memory_Access  2.Dangling_Pointer  3.Race_Condition", "");
-	drawUI.DrawInputUI("È¹     È¿          Ï¼    : ");
+	drawUI.DrawInputUI("È¹µæÇÒ È¿°ú¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
 	playerChoice = PlayerInputNumber(3);
 
 	switch (playerChoice) {
@@ -243,19 +240,19 @@ void GameManager::LegacyCodeMap(State* player, State enemyList[ENEMY_COUNT]) {
 		for (int i = 0; i < ENEMY_COUNT; i++) {
 			enemyList[i].multiplyHealth((double)rand);
 		}
-		drawUI.DrawTextUI("   Íµ    Ã¼            " + to_string(rand) + "%        ß½  Ï´ ", "");
+		drawUI.DrawTextUI("¸ó½ºÅÍµéÀÇ Ã¼·ÂÀ» ±âÁ¸ÀÇ " + to_string(rand) + "%·Î º¯°æÇß½À´Ï´Ù", "");
 		drawUI.DrawInputUI("");
 		Sleep(2000);
 		break;
 	case 2:
 		rand = dis2(gen);
 		player->multiplyAttackDamage(150);
-		drawUI.DrawTextUI(player->getName()+"      Ý·           " + to_string(150) + "%        ß½  Ï´ ", "");
+		drawUI.DrawTextUI(player->getName()+"ÀÇ °ø°Ý·ÂÀÌ ±âÁ¸ÀÇ " + to_string(150) + "%·Î Áõ°¡Çß½À´Ï´Ù", "");
 		drawUI.DrawInputUI("");
 		Sleep(2000);
 		if (rand <= 15) {
 			player->takeDamage(player->getAttackMin());
-			drawUI.DrawTextUI(to_string(15) + "    È®      Ú±   Ú½         ß½  Ï´ .", "");
+			drawUI.DrawTextUI(to_string(15) + "ÀÇ  È®·ü·Î ÀÚ±â ÀÚ½ÅÀ» °ø°ÝÇß½À´Ï´Ù.", "");
 			drawUI.DrawInputUI("");
 		}
 		drawUI.DrawStatus(player->getName(), "", to_string(player->getHealth()), "");
@@ -263,7 +260,7 @@ void GameManager::LegacyCodeMap(State* player, State enemyList[ENEMY_COUNT]) {
 		break;
 	case 3:
 		player->setRaceCondition();
-		drawUI.DrawTextUI("        Ã·  Ì¾î°¡           î°¡  Ô²      Ë´Ï´ .", "               "+to_string(25)+"% È®      Æ¹  Íµ                  Ö°   Ë´Ï´ .");
+		drawUI.DrawTextUI("¾ÕÀ¸·Î ÇÃ·¹ÀÌ¾î°¡ °ø°Ý ½Ã ¹æ¾î°¡ ÇÔ²² Àû¿ëµË´Ï´Ù.", "ÇÏÁö¸¸ °ø°Ý ½Ã "+to_string(25)+"% È®·ü·Î ¾Æ¹«°Íµµ ÇÏÁö ¾ÊÀ» ¼öµµ ÀÖ°Ô µË´Ï´Ù.");
 		drawUI.DrawInputUI("");
 		Sleep(2000);
 		break;
@@ -336,8 +333,8 @@ void GameManager::Turn(int *isPlayer,State *player, State *enemy)
 		drawUI.DrawInputUI(STRING_SELECT_SKILL);
 		Action = PlayerInputNumber(SKILL_SELECTION_RANGE);
 		if (player->getControlByBoss() == Action) {
-			drawUI.DrawTextUI("                   ß½  Ï´ .", "");
-			drawUI.DrawInputUI("    Ï·    Enter");
+			drawUI.DrawTextUI("º¸½º¿¡ ÀÇÇØ ±ÝÁö´çÇß½À´Ï´Ù.", "");
+			drawUI.DrawInputUI("°è¼ÓÇÏ·Á¸é Enter");
 			cin.ignore();
 			cin.get();
 			cout << "\033[1F";
@@ -362,8 +359,8 @@ void GameManager::Turn(int *isPlayer,State *player, State *enemy)
 		}
 		else if (Action == UNIQUE_SKILL_LIST && player->hasSkill() == 0) {
 
-			drawUI.DrawTextUI("             Å³        Ï´ .", "");
-			drawUI.DrawInputUI("    Ï·    Enter");
+			drawUI.DrawTextUI("»ç¿ë °¡´ÉÇÑ ½ºÅ³ÀÌ ¾ø½À´Ï´Ù.", "");
+			drawUI.DrawInputUI("°è¼ÓÇÏ·Á¸é Enter");
 			cin.ignore();
 			cin.get();
 			cout << "\033[1F";
