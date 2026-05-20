@@ -242,7 +242,9 @@ void GameManager::LegacyCodeMap(State* player, State enemyList[ENEMY_COUNT]) {
 	switch (playerChoice) {
 		
 	case 1:
-		rand = dis1(gen);
+		//rand = dis1(gen);
+		rand = 80;
+
 		for (int i = 0; i < ENEMY_COUNT; i++) {
 			enemyList[i].multiplyHealth((double)rand);
 		}

@@ -61,14 +61,14 @@ int Boss::SuicideBomb() {
 void Boss::StateUpdate(State* player) {
 	accTurn++;
 	accTurn %= 2;
-	if (this->health >= 200) {
+	if (this->health >= 50) {
 		
 		AttackIncreaseEvenTurn();
 
 	}
-	else if (this->health < 200 && this->health>50) {
-		AttackControlPlayer(player);
-	}
+	//else if (this->health < 200 && this->health>50) {
+	//	AttackControlPlayer(player);
+	//}
 	else {
 		player->setControlByBoss(0);
 		if (SuicideBomb() == 1) {
