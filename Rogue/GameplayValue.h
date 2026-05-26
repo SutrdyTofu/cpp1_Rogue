@@ -1,6 +1,5 @@
 #pragma once
 
-//테스트
 
 //게임에서 사용되는 ASCII 아트
 #define ASCII_TEST \
