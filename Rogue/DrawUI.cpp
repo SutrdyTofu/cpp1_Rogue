@@ -66,11 +66,11 @@ void DrawUI::DrawStatus(string player_name, string enemy_name, string player_HP,
 	string nameBlank = "";
 	string HpBlank = "";
 
-	for (int i = 0; i < 15 - player_name.length();i++) {
+	for (int i = 0; i < 20 - player_name.length();i++) {
 		nameBlank += " ";
 	}
 
-	for (int i = 0; i < 15 - player_hp.length();i++) {
+	for (int i = 0; i < 20 - player_hp.length();i++) {
 		HpBlank += " ";
 	}
 

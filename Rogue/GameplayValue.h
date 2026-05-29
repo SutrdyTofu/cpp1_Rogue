@@ -6,52 +6,131 @@
 "ASCII_ART//\n\
 ASCII_ART//"
 #define STATUS_UI_ROW 4
-#define ASCII_MAP_ROW 10
-#define ASCII_ENEMY_ROW 5
+#define ASCII_MAP_ROW 23
+#define ASCII_ENEMY_ROW 23
 #define ASCII_MAP \
-"\
-[ Main.cpp Error ]\n\
-/ \\\n\
-/ \\\n\
-[OPT][Legacy]\n\
-/ \\             |\n\
-/       \\ |\n\
-[Legacy][? ][? ]\n\
-|          |           |\n\
-|          +---------- - +\n\
-[? ][OPT][? ]\n\
-|          |           |\n\
-+---------- + |\n\
-|          |           |\n\
-[? ][? ][OPT]\n\
-|          |           |\n\
-START      START       START\
+"\n\n\n\
+                  [ Main.cpp Error ]\n\
+                    /            \\\n\
+                   /              \\\n\
+               [ OPT ]         [ Legacy ]\n\
+               /     \\             |\n\
+              /       \\            |\n\
+        [ Legacy ]   [ ? ]       [ ? ]\n\
+            |          |           |\n\
+            |          +-----------+\n\
+          [ ? ]     [ OPT ]      [ ? ]\n\
+            |          |           |\n\
+            +----------+           | \n\
+            |          |           |\n\
+          [ ? ]      [ ? ]      [ OPT ]\n\
+            |          |           |\n\
+          START      START       START\n\
+\n\n\n\
 "
 #define ASCII_ENEMY_SYNTAX \
 "SYNTAX_ERROR_ASCII//\n\
 SYNTAX_ERROR_ASCII//\n\
 SYNTAX_ERROR_ASCII//\n"
 #define ASCII_ENEMY_LINKER \
-"LINKER_ERROR_ASCII//\n\
-LINKER_ERROR_ASCII//\n\
-LINKER_ERROR_ASCII//\n"	
+"\
+\n\n\n\n\n\
+       ,      ,\n\
+      /(      )\\\n\
+     /  \\____/  \\\n\
+    | [UNRESOLVED]|\n\
+    |  (O)  (O)  |\n\
+     \\__.--.--.__/\n\
+    _/#|_|_|_|#\\_\n\
+   / @@@@/} + \\#### \\\n\
+  | @@@@/  ={  \\#### |\n\
+   \\___/ > ;:- ) \\___/\n\
+   |__| [ERROR] [__]\n\
+  / /  \\      /  \\ \\\n\
+ ^ ^    ^    ^    ^ ^\n\
+\n\n\n\n\n\
+"	
 #define ASCII_ENEMY_LOGIC \
-"LOGIC_ERROR_ASCII//\n\
-LOGIC_ERROR_ASCII//\n\
-LOGIC_ERROR_ASCII//\n"
+"\
+\n\n\n\n\n\
+     ,=, ,=,,=, ,=,\n\
+      |   |  |   | \n\
+      +---+--+---+\n\
+     /             \\\n\
+    |  /--\\  /--\\   |\n\
+    |  \\__/  \\__/   |\n\
+    +---------------+\n\
+    |  (O)     (O)  | \n\
+     \\____    _____/ \n\
+       _ /    \\ _\n\
+      | |      | |   \n\
+      |_|      |_| \n\
+\n\n\n\n\n\
+"
 #define ASCII_ENEMY_MEMORY \
-"MEMORY_LEAK_ASCII//\n\
-MEMORY_LEAK_ASCII//\n\
-MEMORY_LEAK_ASCII//\n"
+"\
+\n\n\n\n\
+       .---.   .---.\n\
+      /     \\ /     \\\n\
+     |       |       | \n\
+      \  / \\     / / /\n\
+    .-`\'-. \\___/ .-\'`-.\n\
+   /                  \\\n\
+  |  0x7FFF...   _    |\n\
+  |   _ .--.    ( )   |\n\
+   \\ ( (    )  ;  ;  /\n\
+   _` \'----\'  .  .  `_\n\
+  ( )  ;  ;  /    \\  ( )\n\
+   ;  .  .  |      |  ; \n\
+  .          \\____/   .\n\
+~~~~  ~~~~~        ~~~~~\n\
+\n\n\n\n\
+"
 #define ASCII_ENEMY_SEGMENTATION \
-"SEGMENTATION_FAULT_ASCII//\n\
-SEGMENTATION_FAULT_ASCII//\n\
-SEGMENTATION_FAULT_ASCII//\n"
+"\
+\n\n\n\n\
+             /\\       /\\\n\
+        ____/[]\\_____/[]\\____\n\
+        |====================| \n\
+        ||   _   _   _   _  ||\n\
+        ||  |_| |_| |_| |_| ||\n\
+        ||                  ||\n\
+        ||    XX      XX    ||\n\
+        ||      XX  XX      ||\n\
+        ||        XX        ||\n\
+        ||      XX  XX      ||\n\
+        ||    XX      XX    ||\n\
+        ||                  ||\n\
+        ||______      ______||\n\
+        |______|______|______| \n\n\n\n\n\
+"
 
 #define ASCII_BOSS_FATAL_RUNTIME_ERROR \
-"ASCII_BOSS_FATAL_RUNTIME_ERROR//\n\
-ASCII_BOSS_FATAL_RUNTIME_ERROR//\n\
-ASCII_BOSS_FATAL_RUNTIME_ERROR//\n"
+"\
+               _,.C++ERROR.,_\n\
+            ,;~\'      _      \'~;,\n\
+          ,;        /!!!\\        ;,\n\
+         ;         /!!!!!\\         ;\n\
+        ,'         -------         ',\n\
+       ,;  !!Fatal Runtime Error!!  ;,\n\
+       ; ;   Memory       Leak!!   ; ;\n\
+       | ;   0x0000       0x0000   ; |\n\
+       |  `/~\"     ~\" . \"~     \"~\\\'  |\n\
+       |  ~  ,-~~~^~, | ,~^~~~-,  ~  |\n\
+        |   | !!!!!! }:{ !!!!!!!|   |\n\
+        |   l !!!!! / | \\ !!!!! !   |\n\
+        .~  (__,.--\" .^. \"--.,__)  ~.\n\
+        |     ---;' / | \\ `;---     |\n\
+         \\__.       \\/^\\/       .__/\n\
+          V| \\Segmentation Fault/ |V\n\
+           | |T~\\_Logic Error_/~T| \n\
+           | |`;;;;_;_;_;_;;;;`| |\n\
+           |  \\,;;; ; ; ; ;;;,/  |\n\
+            \\   `Linker Error\'  /\n\
+              \\   .       .   /\n\
+                \\.    ^    ./\n\
+                  ^~ERROR~^ \n\
+"
 
 //플레이어,적의 기본 능력치, 밸런스
 #define PLAYER_NAME "Debuger"
