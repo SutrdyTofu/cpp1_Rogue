@@ -9,13 +9,24 @@ ASCII_ART//"
 #define ASCII_MAP_ROW 10
 #define ASCII_ENEMY_ROW 5
 #define ASCII_MAP \
-"MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//\n\
-MAP//MAP//MAP//MAP//MAP//MAP//"
+"\
+[ Main.cpp Error ]\n\
+/ \\\n\
+/ \\\n\
+[OPT][Legacy]\n\
+/ \\             |\n\
+/       \\ |\n\
+[Legacy][? ][? ]\n\
+|          |           |\n\
+|          +---------- - +\n\
+[? ][OPT][? ]\n\
+|          |           |\n\
++---------- + |\n\
+|          |           |\n\
+[? ][? ][OPT]\n\
+|          |           |\n\
+START      START       START\
+"
 #define ASCII_ENEMY_SYNTAX \
 "SYNTAX_ERROR_ASCII//\n\
 SYNTAX_ERROR_ASCII//\n\
