@@ -29,9 +29,17 @@ ASCII_ART//"
 \n\n\n\
 "
 #define ASCII_ENEMY_SYNTAX \
-"SYNTAX_ERROR_ASCII//\n\
-SYNTAX_ERROR_ASCII//\n\
-SYNTAX_ERROR_ASCII//\n"
+"\
+\n\n\n\n\n\n\n\
+      , : ;[] \n\
+   _{ }    {;}[]\n\
+  \\  !  (\\\\<>+ )\n\
+    {} * .   ;\"?}\n\
+   {(;=)/;\n\
+  @   ;[] : |\n\
+      {;}     `~\n\
+\n\n\n\n\n\n\n\
+"
 #define ASCII_ENEMY_LINKER \
 "\
 \n\n\n\n\n\
