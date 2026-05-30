@@ -6,8 +6,8 @@
 "ASCII_ART//\n\
 ASCII_ART//"
 #define STATUS_UI_ROW 4
-#define ASCII_MAP_ROW 23
-#define ASCII_ENEMY_ROW 23
+#define ASCII_MAP_ROW 22
+#define ASCII_ENEMY_ROW 22
 #define ASCII_MAP \
 "\n\n\n\
                   [ Main.cpp Error ]\n\
