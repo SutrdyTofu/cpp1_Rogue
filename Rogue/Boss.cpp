@@ -61,6 +61,11 @@ int Boss::SuicideBomb() {
 void Boss::StateUpdate(State* player) {
 	accTurn++;
 	accTurn %= 2;
+
+	if (this->health <= 0) {
+		return;
+	}
+
 	if (this->health >= 50) {
 		
 		AttackIncreaseEvenTurn();
